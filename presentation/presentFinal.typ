@@ -18,8 +18,168 @@
     + Tecnologie utilizzate
     + Risultati delle implementazione
     + Obiettivi raggiunti
-    + Conclusioni e Sviluppi Futuri
+    + Conclusione
   ]]
+])
+
+#slide("Introduzione dell'azienda - Spazio Dev S.r.l.",[
+  #set text(size: 1.1em)
+  
+  #let icon(name) = box(image("../images/icons/" + name, height: 1em), baseline: 20%)
+  
+  #let freccia(lunghezza) = box(width: lunghezza, align(horizon)[
+      #place(line(length: lunghezza, stroke: 2pt)) 
+      #place(right, polygon(fill: black, (0pt, 0pt), (-6pt, 3.5pt), (-6pt, -3.5pt))) 
+  ])
+  #let underlined-spaced(content, offset: 2pt, stroke: 1pt + black) = {
+      box(width: auto, {
+        content
+        place(bottom + left, dy: offset, line(length: 90%, stroke: stroke))
+      })
+    }
+  #move(dy: 2.5cm)[ 
+    
+    #grid(
+      columns: (20%, 80%),
+      gutter: 1em,
+      
+      place(dx : 10pt, dy : 20pt)[
+        #align(center + horizon)[
+          #image("../images/spazio_dev_logo.jfif", width: 80%)
+        ]
+      ],
+
+      grid(
+        columns: (25%, 75%), 
+        row-gutter: 2em,
+        
+        align(bottom + left)[
+          #move(dx: 0pt, dy: 0pt)[ 
+              #rotate(-30deg, origin: left)[
+                 #freccia(5cm)
+              ]
+          ]
+        ],
+        [
+          #move(dy: -1.5cm)[ 
+            
+            #grid(
+              columns: (auto, auto, auto),
+              gutter: 0.5em,
+              align: horizon, 
+              [
+                  #set list(marker: none)
+                  #grid(
+                    columns: (auto, auto), gutter: 1em,
+                    icon("commerciale.png"), [Marketing],
+                    icon("computer.png"), [Production],
+                    icon("finanza.png"), [Sales Finance]
+                  )
+              ],
+              
+              move(dy: -5pt)[ 
+                  #scale(x: 100%, y: 600%)[ 
+                     #text(weight: "light")[}] 
+                  ]
+              ],
+              
+              [
+                 #grid(
+                   columns: (auto, auto), gutter: 0.5em, align: horizon,
+                   icon("mdi--people.svg"), 
+                   [**10+ dipendenti**]
+                 )
+              ]
+            )
+          ]
+        ],
+        align(horizon + left)[
+          #freccia(3.5cm)
+        ],
+        [
+          #grid(
+            columns: (auto, auto), gutter: 0.5em,
+            icon("mdi--location.svg"), [** Via Don C. Barison, 34, 35019 Onara PD**]
+          )
+        ],
+        align(top + left)[
+          #move(dx: 0pt, dy: -10pt)[ 
+              #rotate(25deg, origin: left)[
+                 #freccia(4.5cm)
+              ]
+          ]
+        ],
+        [
+          *Progetti & Prodotti*
+          #set text(size: 0.85em) 
+          #list(marker: [•], spacing: 0.6em,
+            [Spazio Dev Custom],
+            [Webigno],
+            [Relai],
+            [Dev Automation],
+            [Mugalab Shop],
+            [Mugalab Industry],
+            [
+              #underlined-spaced(offset: 2pt, stroke: 1pt + purple)[*Smart Prospect*]
+              #box(width: 0pt)[ 
+                #move(dx: 10pt, dy: 0pt)[
+                  #rotate(-15deg, origin: left)[ 
+                      #freccia(2.5cm) 
+                  ]
+                ]
+              ]
+            ]
+          )
+        ]
+      ),
+    )
+  ] 
+  #place(dx: 510pt, dy: -20pt)[
+    #rect(stroke: 1pt + white, inset: 0pt)[
+        #image("../images/paginiziale.jpg", width: 34%) 
+    ]
+  ]
+  #place(dx: 490pt, dy: -10pt)[
+    #rect(stroke: 1pt + white, inset: 0pt)[
+        #image("../images/filtro.jpg", width: 35%) 
+    ]
+  ]
+
+  #place(dx: 470pt, dy: 0pt)[
+    #rect(stroke: 1pt + white, inset: 0pt)[
+        #image("../images/SmartProspect.jpg", width: 35%) 
+    ]
+  ]
+])
+
+#slide("Introduzione dell'azienda - Spazio Dev S.r.l.",[
+
+
+
+])
+
+#slide("Progetto SmartProspect",[
+
+
+
+])
+
+#slide("Obiettivi principali",[
+
+
+
+])
+
+#slide("Risultati delle implementazioni",[
+
+
+
+])
+
+#slide("Conclusione",[
+
+
+
 ])
 /*
 #slide("RISKAPP S.R.L - CONTESTO AZIENDALE",[
