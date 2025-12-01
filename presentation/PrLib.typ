@@ -44,7 +44,7 @@
         gutter: 1em,
         align(left+horizon)[
           #myTitle \ 
-          #myName #myMatricola - #date.display("[day] Luglio [year]")
+          #myName #myMatricola - #date.display("[day] Dicembre [year]")
         ], 
         align(right+horizon)[
           #currentPage / #lastPage

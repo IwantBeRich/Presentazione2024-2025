@@ -13,11 +13,10 @@
   #align(horizon)[
   #text(size: 2.5em)[
     + Introduzione dell'azienda
-    + Il progetto svolto durante lo stage
     + Obiettivi principali
-    + Tecnologie utilizzate
-    + Risultati delle implementazione
+    + Il progetto svolto durante lo stage
     + Obiettivi raggiunti
+    + Tecnologie utilizzate
     + Conclusione
   ]]
 ])
@@ -151,29 +150,267 @@
     ]
   ]
 ])
+#slide("Obiettivi principali 1° parte",[
 
-#slide("Introduzione dell'azienda - Spazio Dev S.r.l.",[
+#grid(
+  columns: (50%,50%),
+  inset: 1em,
+  align: left,
 
+  [
+    #text(1.66em)[#align(center)[*OBBLIGATORI*]
+    #list(
+      [*Prima versione di AI Area Finder* : individua le aziende in un’area (poligono, comune, CAP) e assegna uno score di pertinenza per i servizi associati],
+      [*Elenco aziende con filtri avanzati* : visualizza le aziende con ricerca, filtri combinabili e paginazione server-side],
+      [*Anteprima import da AI/Scraping* : mostra i dati estratti, controlla duplicati e registra gli esiti],
+      [*Documentazione + test* : include documentazione tecnica/utente e test su funzionalità critiche],
+    )
+    ]
+  ],
 
+  [
+    #text(1.66em)[#align(top+center)[*FACOLTATIVI*]
+    #v(-0.6em)
+    #list(
+      [*Hook UI* per richiesta di arricchimento su selezione multipla],
+      [*Esposizione endpoint* per consumo esterno (webhook/API) con token di servizio],
+      [*Integrazione base n8n* per orchestrare il flusso AI → arricchimento → import]
+    )
+    ]
+  ]
+)
 
 ])
 
-#slide("Progetto SmartProspect",[
+
+#slide("Obiettivi principali 2° parte",[
+
+#grid(
+  columns: (50%,50%),
+  inset: 1em,
+  align: left,
+
+  [
+    #text(1.9em)[#align(center)[*DESIDERABILI*]
+    #list(
+      [*Bulk import CSV avanzato* : Caricamento massivo CSV con mappatura campi, validazioni e report riga-per-riga],
+      [*Badge informativi nella lista aziende* : Indicatori rapidi nell’elenco, es. prossima attività pianificata o stati sintetici.],
+      [*Mini-KPI nella testata elenco* : Piccoli widget con conteggi per stato/settore basati sul filtro attivo],
+    )
+    ]
+  ],
+
+  [
+    #text(1.9em)[#align(top+center)[*EXTRA*]
+    #v(-0.6em)
+    #list(
+      [*Sistema campagne email automatizzate* : Invio sequenziale di 3 email con delay personalizzato tra un invio e l’altro],
+      [*Pagina gestione campagne* : Tabella completa delle campagne con filtri, dettagli, e possibilità di modifica tramite form dedicato],
+    )
+    ]
+  ]
+)
+
+])
+#slide("Progetto SmartProspect - Cosa è stato sviluppato",[
+  #place(dx: 370pt, dy: 0pt)[
+    #rect(stroke: 1pt + white, inset: 0pt)[
+        #image("../images/filtrocampagne.jpg", width: 40%) 
+    ]
+  ]
+  #place(dx: 470pt, dy: 60pt)[
+    #rect(stroke: 1pt + white, inset: 0pt)[
+        #image("../images/mappasingoleaziende.jpg", width: 40%) 
+    ]
+  ]
+  #place(dx: 330pt, dy: 120pt)[
+    #rect(stroke: 1pt + white, inset: 0pt)[
+        #image("../images/vislog.jpg", width: 40%) 
+    ]
+  ]
+  #place(dx:  490pt, dy: 180pt)[
+    #rect(stroke: 1pt + white, inset: 0pt)[
+        #image("../images/elencoaziende.jpg", width: 40%) 
+    ]
+  ]
+#align(horizon)[
+  #set text(size: 2.5em)
+
+  #let riga(icona, testo) = {
+    grid(
+      columns: (auto, 1fr),
+      gutter: 0.6em,
+      align: horizon,
+      box(height: 1em, align(horizon)[#icona]), 
+      testo
+    )
+  }
+
+  #grid(
+    columns: (1fr),
+    row-gutter: 0.8em,
+    
+    riga(image("../images/icons/map.png") , [Mappa combinata con i filtri]),
+    riga(image("../images/icons/ai.png") , [AI Area Finder]),
+    riga(image("../images/icons/list.png"), [Elenco aziende]),
+    riga(image("../images/icons/log.png"), [Log e monitoraggio]),
+    riga(image("../images/icons/newsletter.png"), [Campagne Email]),
+    riga(image("../images/icons/documentation.png"), [Documentazione e Test])
+  )
+]
+])
+
+#slide("Mappa combinata con i filtri 1° parte",[
+  #let freccia(lunghezza) = box(width: lunghezza, align(horizon)[
+      #place(line(length: lunghezza, stroke: 2pt))
+      #place(right, polygon(fill: black, (0pt, 0pt), (-6pt, 3.5pt), (-6pt, -3.5pt)))
+  ])
+
+  #place(dx: 0pt, dy: 0pt)[
+    #rect(stroke: 1pt + white, inset: 0pt)[
+        #image("../images/filtrimappa.png", width: 50%)
+    ]
+  ]
+  #place(dx: 680pt, dy: 60pt)[
+    #text(size: 2em, weight: "bold", style: "italic")[ Filtri ]
+  ]
+  #place(dx: 480pt, dy: 95pt)[
+    #rotate(180deg)[#freccia(250pt)]
+  ]
+
+  #place(dx: 370pt, dy: 150pt)[
+    #rect(stroke: 1pt + white, inset: 0pt)[
+        #image("../images/mappasingoleaziende.jpg", width: 50%)
+    ]
+  ]
+
+  #place(dx: 0pt, dy: 260pt)[
+    #text(size: 2em, weight: "bold", style: "italic")[ Mappa Iterativa ]
+    #rotate(0deg)[#freccia(250pt)]
+  ]
+])
 
 
+
+#slide("Mappa combinata con i filtri 2° parte",[
+  #place(dx: 0pt, dy: -10pt)[
+    #text(size: 2.5em, weight: "bold", style: "italic")[Se l'utente diminuisce]
+  ]
+  #place(dx: 30pt, dy: 10pt)[
+    #text(size: 2.5em, weight: "bold", style: "italic")[lo zoom sulla mappa?]
+  ]
+  #place(dx: 720pt, dy: -20pt)[
+    #text(size: 2em, weight: "bold", style: "italic")[ Città ]
+  ]
+    #place(dx: 280pt, dy: 40pt)[
+    #text(size: 2em, weight: "bold", style: "italic")[ Provincia ]
+  ]
+    #place(dx: 95pt, dy: 100pt)[
+    #text(size: 2em, weight: "bold", style: "italic")[ Regione ]
+  ]
+  #place(dx: 370pt, dy: 0pt)[
+    #rect(stroke: 1pt + white, inset: 0pt)[
+        #image("../images/città.jpg", width: 55%) 
+    ]
+  ]
+  #place(dx:  170pt, dy: 60pt)[
+    #rect(stroke: 1pt + white, inset: 0pt)[
+        #image("../images/province.jpg", width: 55%) 
+    ]
+  ]
+  #place(dx:  0pt, dy: 120pt)[
+    #rect(stroke: 1pt + white, inset: 0pt)[
+        #image("../images/regione.jpg", width: 55%) 
+    ]
+  ]
+])
+
+#slide("Progetto SmartProspect - AI Area Finder",[
 
 ])
 
-#slide("Obiettivi principali",[
-
-
+#slide("Progetto SmartProspect - Elenco aziende",[
 
 ])
 
-#slide("Risultati delle implementazioni",[
+#slide("Progetto SmartProspect - Log e monitoraggio",[
 
+])
 
+#slide("Progetto SmartProspect - Campagne Email",[
 
+])
+
+#slide("Progetto SmartProspect - Documentazione e Test",[
+
+])
+
+#slide("Obiettivi raggiunti 1° parte",[
+#grid(
+  columns: (50%,50%),
+  inset: 1em,
+  align: left,
+
+  [
+    #text(1.66em)[#align(center)[*OBBLIGATORI*]
+    #list(
+      marker: image("../images/icons/icons8-verificato.svg", width: 1em),
+
+      [*Prima versione di AI Area Finder* : individua le aziende in un’area (poligono, comune, CAP) e assegna uno score di pertinenza per i servizi associati],
+      [*Elenco aziende con filtri avanzati* : visualizza le aziende con ricerca, filtri combinabili e paginazione server-side],
+      [*Anteprima import da AI/Scraping* : mostra i dati estratti, controlla duplicati e registra gli esiti],
+      [*Documentazione + test* : include documentazione tecnica/utente e test su funzionalità critiche],
+    )
+    ]
+  ],
+
+  [
+    #text(1.66em)[#align(top+center)[*FACOLTATIVI*]
+    #v(-0.6em)
+    #list(
+      marker: image("../images/icons/icons8-rimuovi.svg", width: 1em),
+      [*Hook UI* per richiesta di arricchimento su selezione multipla],
+      [*Esposizione endpoint* per consumo esterno (webhook/API) con token di servizio],
+    )
+
+    #list(
+      marker: image("../images/icons/icons8-verificato.svg", width: 1em),
+      [*Integrazione base n8n* per orchestrare il flusso AI → arricchimento → import]
+    )
+    ]
+  ]
+)
+])
+
+#slide("Obiettivi raggiunti 2° parte",[
+#grid(
+  columns: (50%,50%),
+  inset: 1em,
+  align: left,
+
+  [
+    #text(1.9em)[#align(center)[*DESIDERABILI*]
+    #list(
+      marker: image("../images/icons/icons8-rimuovi.svg", width: 1em),
+
+      [*Bulk import CSV avanzato* : Caricamento massivo CSV con mappatura campi, validazioni e report riga-per-riga],
+      [*Badge informativi nella lista aziende* : Indicatori rapidi nell’elenco, es. prossima attività pianificata o stati sintetici.],
+      [*Mini-KPI nella testata elenco* : Piccoli widget con conteggi per stato/settore basati sul filtro attivo],
+    )
+    ]
+  ],
+
+  [
+    #text(1.9em)[#align(top+center)[*EXTRA*]
+    #v(-0.6em)
+    #list(
+      marker: image("../images/icons/icons8-verificato.svg", width: 1em),
+      [*Sistema campagne email automatizzate* : Invio sequenziale di 3 email con delay personalizzato tra un invio e l’altro],
+      [*Pagina gestione campagne* : Tabella completa delle campagne con filtri, dettagli, e possibilità di modifica tramite form dedicato],
+    )
+    ]
+  ]
+)
 ])
 
 #slide("Conclusione",[
