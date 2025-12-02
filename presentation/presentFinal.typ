@@ -347,7 +347,7 @@
   ]
   
   #place(dx: 75pt, dy: 87pt)[
-    #icon("mdi--people.svg")
+    #icon("monitor.png")
     #text(size: 1.6em, weight: "bold", style: "italic")[ Ricavo dati ]
   ]
   #place(dx: 175pt, dy: 110pt)[
@@ -363,7 +363,7 @@
     )
   ]
   #place(dx: 220pt, dy: 110pt)[
-    #icon("mdi--people.svg")
+    #icon("data.png")
     #text(size: 1.6em, weight: "bold", style: "italic")[ Controlli ]
   ]
   #place(dx: 305pt, dy: 130pt)[
@@ -379,7 +379,7 @@
     )
   ]
   #place(dx: 350pt, dy: 130pt)[
-    #icon("mdi--people.svg")
+    #icon("workflow.png")
     #text(size: 1.6em, weight: "bold", style: "italic")[ n8n ]
   ]
   #place(dx: 400pt, dy: 150pt)[
@@ -395,7 +395,7 @@
     )
   ]
   #place(dx: 445pt, dy: 150pt)[
-    #icon("mdi--people.svg")
+    #icon("data-collection.png")
     #text(size: 1.6em, weight: "bold", style: "italic")[ Integrazione dati ]
   ]
   #place(dx: 590pt, dy: 170pt)[
@@ -411,7 +411,7 @@
     )
   ]
   #place(dx: 630pt, dy: 170pt)[
-    #icon("mdi--people.svg")
+    #icon("workflow.png")
     #text(size: 1.6em, weight: "bold", style: "italic")[ n8n ]
   ]
   #place(dx: 670pt, dy: 195pt)[
@@ -427,7 +427,7 @@
     )
   ]
   #place(dx: 610pt, dy: 235pt)[
-    #icon("mdi--people.svg")
+    #icon("diskette.png")
     #text(size: 1.6em, weight: "bold", style: "italic")[ Salvataggio ]
   ]
 
@@ -438,10 +438,63 @@
   ]
 ])
 
-
-
 #slide("Progetto SmartProspect - Elenco aziende",[
+  #let icon(name) = box(
+    image("../images/icons/" + name, height: 1.4em),
+    baseline: 60%
+  )
 
+  #place(dx:  0pt, dy: 0pt)[
+    #rect(stroke: 1pt + white, inset: 0pt)[
+        #image("../images/aziendeInMappaButton.png", width: 20%) 
+    ]
+  ]
+  #place(dx: 150pt, dy: 17pt)[
+    #curve(
+      tip: triangle,
+      toe: none,
+      stroke: black + 1.5pt,
+      std.curve.cubic(
+        (0pt, 0pt),
+        (20pt, 0pt),
+        (210pt, 0pt)
+      )
+    )
+  ]
+  #place(dx:  362pt, dy: 0pt)[
+    #rect(stroke: 1pt + white, inset: 0pt)[
+        #image("../images/ModaleElencoAziende.png", width: 50%) 
+    ]
+  ]
+  #place(dx:  -10pt, dy: 50pt)[
+    #grid(
+      columns: (50%,50%),
+      inset: 1em,
+      align: left,
+
+      [
+        #text(1.80em)[#align(top+center)[*Cosa fa?*]
+        #list(
+          marker : [‣],
+          [Mostra le aziende dentro al poligono/i selezionato/i],
+          [Mostra le aziende tramite con solo l'utilizzo del filtro],
+        )
+        ]
+        #v(1em)
+        #text(1.80em)[#align(top+center)[*Cosa è stato sviluppato?*]
+        #list(
+          marker : [*+*],
+          [Ottimizzato il caricamento del modale],
+          [Sostituito lo scroll con load infinito con la paginazione],
+          [Migliorato lo stile nel rappresentare i dati],
+        )
+        ]
+      ],
+
+      [
+      ]
+    )
+  ]
 ])
 
 #slide("Progetto SmartProspect - Log e monitoraggio",[
