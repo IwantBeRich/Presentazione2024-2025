@@ -325,9 +325,120 @@
   ]
 ])
 
-#slide("Progetto SmartProspect - AI Area Finder",[
+#slide("AI Area Finder", [
+  #let icon(name) = box(image("../images/icons/" + name, height: 2em), baseline: 20%)
+  #place(dx: 0pt, dy: 0pt)[
+    #rect(stroke: 1pt + white, inset: 0pt)[
+        #image("../images/menu.png", width: 100%)
+    ]
+  ]
 
+  #place(dx: 40pt, dy: 50pt)[
+    #curve(
+      tip: triangle,
+      toe: none,
+      stroke: black + 1.5pt,
+      std.curve.cubic(
+        (20pt, 0pt),
+        (10pt, 40pt),
+        (30pt, 50pt)
+      )
+    )
+  ]
+  
+  #place(dx: 75pt, dy: 87pt)[
+    #icon("mdi--people.svg")
+    #text(size: 1.6em, weight: "bold", style: "italic")[ Ricavo dati ]
+  ]
+  #place(dx: 175pt, dy: 110pt)[
+    #curve(
+      tip: triangle,
+      toe: none,
+      stroke: black + 1.5pt,
+      std.curve.cubic(
+        (0pt, 10pt),
+        (0pt, 10pt),
+        (40pt, 10pt)
+      )
+    )
+  ]
+  #place(dx: 220pt, dy: 110pt)[
+    #icon("mdi--people.svg")
+    #text(size: 1.6em, weight: "bold", style: "italic")[ Controlli ]
+  ]
+  #place(dx: 305pt, dy: 130pt)[
+    #curve(
+      tip: triangle,
+      toe: none,
+      stroke: black + 1.5pt,
+      std.curve.cubic(
+        (0pt, 10pt),
+        (0pt, 10pt),
+        (40pt, 10pt)
+      )
+    )
+  ]
+  #place(dx: 350pt, dy: 130pt)[
+    #icon("mdi--people.svg")
+    #text(size: 1.6em, weight: "bold", style: "italic")[ n8n ]
+  ]
+  #place(dx: 400pt, dy: 150pt)[
+    #curve(
+      tip: triangle,
+      toe: none,
+      stroke: black + 1.5pt,
+      std.curve.cubic(
+        (0pt, 10pt),
+        (0pt, 10pt),
+        (40pt, 10pt)
+      )
+    )
+  ]
+  #place(dx: 445pt, dy: 150pt)[
+    #icon("mdi--people.svg")
+    #text(size: 1.6em, weight: "bold", style: "italic")[ Integrazione dati ]
+  ]
+  #place(dx: 590pt, dy: 170pt)[
+    #curve(
+      tip: triangle,
+      toe: none,
+      stroke: black + 1.5pt,
+      std.curve.cubic(
+        (0pt, 10pt),
+        (0pt, 10pt),
+        (40pt, 10pt)
+      )
+    )
+  ]
+  #place(dx: 630pt, dy: 170pt)[
+    #icon("mdi--people.svg")
+    #text(size: 1.6em, weight: "bold", style: "italic")[ n8n ]
+  ]
+  #place(dx: 670pt, dy: 195pt)[
+    #curve(
+      tip: triangle,
+      toe: none,
+      stroke: black + 1.5pt,
+      std.curve.cubic(
+        (0pt, 0pt),
+        (0pt, 20pt),
+        (0pt, 40pt)
+      )
+    )
+  ]
+  #place(dx: 610pt, dy: 235pt)[
+    #icon("mdi--people.svg")
+    #text(size: 1.6em, weight: "bold", style: "italic")[ Salvataggio ]
+  ]
+
+  #place(dx:  0pt, dy: 180pt)[
+    #rect(stroke: 1pt + white, inset: 0pt)[
+        #image("../images/n8n2.jpg", width: 70%) 
+    ]
+  ]
 ])
+
+
 
 #slide("Progetto SmartProspect - Elenco aziende",[
 
