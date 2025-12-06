@@ -9,18 +9,6 @@
   date
 )
 
-#slide("Indice di esposizione",[
-  #align(horizon)[
-  #text(size: 2.5em)[
-    + Introduzione dell'azienda
-    + Obiettivi principali
-    + Il progetto svolto durante lo stage
-    + Obiettivi raggiunti
-    + Tecnologie utilizzate
-    + Conclusione
-  ]]
-])
-
 #slide("Introduzione dell'azienda - Spazio Dev S.r.l.",[
   #set text(size: 1.1em)
   
@@ -150,68 +138,7 @@
     ]
   ]
 ])
-#slide("Obiettivi principali 1° parte",[
 
-#grid(
-  columns: (50%,50%),
-  inset: 1em,
-  align: left,
-
-  [
-    #text(1.66em)[#align(center)[*OBBLIGATORI*]
-    #list(
-      [*Prima versione di AI Area Finder* : individua le aziende in un’area (poligono, comune, CAP) e assegna uno score di pertinenza per i servizi associati],
-      [*Elenco aziende con filtri avanzati* : visualizza le aziende con ricerca, filtri combinabili e paginazione server-side],
-      [*Anteprima import da AI/Scraping* : mostra i dati estratti, controlla duplicati e registra gli esiti],
-      [*Documentazione + test* : include documentazione tecnica/utente e test su funzionalità critiche],
-    )
-    ]
-  ],
-
-  [
-    #text(1.66em)[#align(top+center)[*FACOLTATIVI*]
-    #v(-0.6em)
-    #list(
-      [*Hook UI* per richiesta di arricchimento su selezione multipla],
-      [*Esposizione endpoint* per consumo esterno (webhook/API) con token di servizio],
-      [*Integrazione base n8n* per orchestrare il flusso AI → arricchimento → import]
-    )
-    ]
-  ]
-)
-
-])
-
-
-#slide("Obiettivi principali 2° parte",[
-
-#grid(
-  columns: (50%,50%),
-  inset: 1em,
-  align: left,
-
-  [
-    #text(1.9em)[#align(center)[*DESIDERABILI*]
-    #list(
-      [*Bulk import CSV avanzato* : Caricamento massivo CSV con mappatura campi, validazioni e report riga-per-riga],
-      [*Badge informativi nella lista aziende* : Indicatori rapidi nell’elenco, es. prossima attività pianificata o stati sintetici.],
-      [*Mini-KPI nella testata elenco* : Piccoli widget con conteggi per stato/settore basati sul filtro attivo],
-    )
-    ]
-  ],
-
-  [
-    #text(1.9em)[#align(top+center)[*EXTRA*]
-    #v(-0.6em)
-    #list(
-      [*Sistema campagne email automatizzate* : Invio sequenziale di 3 email con delay personalizzato tra un invio e l’altro],
-      [*Pagina gestione campagne* : Tabella completa delle campagne con filtri, dettagli, e possibilità di modifica tramite form dedicato],
-    )
-    ]
-  ]
-)
-
-])
 #slide("Progetto SmartProspect - Cosa è stato sviluppato",[
   #place(dx: 370pt, dy: 0pt)[
     #rect(stroke: 1pt + white, inset: 0pt)[
